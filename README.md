@@ -1,5 +1,5 @@
 # WIP
-Based on https://github.com/olbat
+Based on https://github.com/olbat/dockerfiles/
 
 # CUPS print server image [![Build Status](https://travis-matrix-badges.herokuapp.com/repos/olbat/dockerfiles/branches/master/2)](https://travis-ci.org/olbat/dockerfiles)
 
