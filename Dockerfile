@@ -1,7 +1,7 @@
-ARG BASE_USER
-ARG MAINTAINER
+ARG BASE_USER=olbat
 FROM ${BASE_USER}/debian:testing
-MAINTAINER $MAINTAINER
+# MAINTAINER $MAINTAINER # Deprecated use LABEL
+ENV PRINT_PASSWORD="print"
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
 RUN apt-get update \
@@ -30,7 +30,7 @@ RUN useradd \
   --create-home \
   --home-dir=/home/print \
   --shell=/bin/bash \
-  --password=$(mkpasswd print) \
+  --password=$(mkpasswd ${PRINT_PASSWORD}) \
   print \
 && sed -i '/%sudo[[:space:]]/ s/ALL[[:space:]]*$/NOPASSWD:ALL/' /etc/sudoers
 
@@ -38,4 +38,5 @@ RUN useradd \
 COPY --chown=root:lp cupsd.conf /etc/cups/cupsd.conf
 
 # Default shell
+CMD ["echo 'print:docker' | chpasswd"]
 CMD ["/usr/sbin/cupsd", "-f"]
