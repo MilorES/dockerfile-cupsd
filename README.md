@@ -1,7 +1,9 @@
 # WIP
-Based on image is built from https://github.com/olbat/dockerfiles/tree/master/cupsd
+It tries to learn the use of the Dockerfile and be able to change the user's password: "print"
 
 # CUPS print server image
+Original image is built from  https://github.com/olbat/dockerfiles/tree/master/cupsd  
+This image is built from https://github.com/MilorES/dockerfile-cupsd
 
 ## Overview
 Docker image including CUPS print server and printing drivers (installed from the Debian packages).
