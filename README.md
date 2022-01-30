@@ -11,12 +11,12 @@ Docker image including CUPS print server and printing drivers (installed from th
 ## Run the Cups server
 Using the default [cupsd.conf](cupsd.conf) configuration file:
 ```bash
-docker run -d -p 631:631 -v /var/run/dbus:/var/run/dbus --name cupsd olbat/cupsd
+docker run -d -p 631:631 -v /var/run/dbus:/var/run/dbus --name cupsd milores/cupsd:v1
 ```
 
 Using a custom cupsd.conf configuration file:
 ```bash
-docker run -d -p 631:631 -v /var/run/dbus:/var/run/dbus -v $PWD/cupsd.conf:/etc/cups/cupsd.conf --name cupsd olbat/cupsd`
+docker run -d -p 631:631 -v /var/run/dbus:/var/run/dbus -v $PWD/cupsd.conf:/etc/cups/cupsd.conf --name cupsd milores/cupsd:v1`
 ```
 
 
