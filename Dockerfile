@@ -1,3 +1,4 @@
+
 ARG BASE_USER=olbat
 FROM ${BASE_USER}/debian:testing
 # MAINTAINER $MAINTAINER # Deprecated use LABEL
@@ -38,5 +39,4 @@ RUN useradd \
 COPY --chown=root:lp cupsd.conf /etc/cups/cupsd.conf
 
 # Default shell
-CMD ["echo 'print:docker' | chpasswd"]
-CMD ["/usr/sbin/cupsd", "-f"]
+CMD ["echo 'print:docker' | chpasswd" ; /usr/sbin/cupsd", "-f"]
